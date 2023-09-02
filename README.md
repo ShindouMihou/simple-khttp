@@ -38,3 +38,15 @@ that allows things such as recording elapsed time. We also have built-in plugins
     - `elapsed.time`: Duration
     - `elapsed.start`: TimeSource.Monotonic.ValueTimeMark
     - `elapsed.end`: TimeSource.Monotonic.ValueTimeMark
+
+Example with `ElapsedTimePlugin`:
+```kotlin
+suspend fun main() {
+    val response  = HttpRequest(
+        method = Methods.GET,
+        url = "https://jsonplaceholder.typicode.com/todos/1",
+        plugins = listOf(ElapsedTimePlugin)
+    ).response()
+    println("It took ${(response.extras["elapsed.time"] as Duration).inWholeMilliseconds} milliseconds to complete request!")
+}
+```
