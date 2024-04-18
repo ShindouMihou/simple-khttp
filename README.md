@@ -8,6 +8,11 @@ Simple kHttp aims to fill that little tiny gap in HTTP libraries. kHttp is an ex
 coroutine wrapper around Java's new HttpClient with an additional plugin-based system. The library aims to be as simple as possible 
 while still being super flexible, such as discarding the response body, etc.
 
+> **Note!**
+> 
+> Simple kHTTP uses coroutines underneath, therefore, if the project that you are building doesn't support Kotlin Coroutines, 
+> then this library isn't supported for your project.
+
 ## Demo
 ```kotlin
 suspend fun main() {
@@ -27,6 +32,55 @@ suspend fun main() {
     }
 }
 ```
+
+## Installation
+
+To install `simple-khttp`, simply follow the steps below:
+
+**1. Add the Jitpack Repository**
+
+Follow the one for your build tool, if you are using Gradle, then follow the top example otherwise for Maven users, 
+follow the bottom example.
+
+```groovy
+repositories {
+  maven { url 'https://jitpack.io' }
+}
+```
+```maven
+<repositories>
+	<repository>
+	  <id>jitpack.io</id>
+	  <url>https://jitpack.io</url>
+	</repository>
+</repositories>
+```
+
+**2. Install the core library**
+
+To get the latest release, simply head to [`Jitpack Releases`](https://jitpack.io/#pw.mihou/simple-khttp) and 
+select the `Releases` tab. You can then copy the latest `Version` with the `Get it` green button.
+
+```groovy
+dependencies {
+    implementation 'pw.mihou.simple-khttp:core:<version>'
+}
+```
+
+```maven
+<dependency>
+  <groupId>pw.mihou.simple-khttp</groupId>
+  <artifactId>core</artifactId>
+  <version>Tag</version>
+</dependency>
+```
+
+**3. Start using the library.**
+
+You can now use the library after installing and reloading your build tool. A quick example can be seen from the 
+[`Demo`](#demo) section which shows some really simple examples.
+
+Additionally, you can also install plugins by reading the [`Plugins`](#plugins) section.
 
 ## Plugins
 
@@ -62,3 +116,9 @@ suspend fun main() {
     println("It took ${(response.extras["elapsed.time"] as Duration).inWholeMilliseconds} milliseconds to complete request!")
 }
 ```
+
+## License
+
+As part of Qucy Studios and Shindou Mihou's Open-Source Libraries, Simple kHTTP will be MIT-licensed permanently and 
+irrevocably, which means that this license shall not change. You and enterprises are free to use, redistribute and  
+modify the code for any purposes, although we hold no responsibility for any harm conducted by the use of the library.
