@@ -1,0 +1,14 @@
+plugins {
+    id 'org.jetbrains.kotlin.plugin.serialization' version "1.9.21"
+}
+
+description = "The core library of Simple kHTTP that enables simple HTTP requests."
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2"
+}

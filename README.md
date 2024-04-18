@@ -1,7 +1,7 @@
 # Simple kHttp
 
 Kotlin doesn't have simple, straightforward and flexible HTTP libraries. There are libraries such as Fuel, but the latest 
-version of Fuel, in particular, version 3 alpha,  lacks everything in flexibility and couldn't even allow me to set the timeout which 
+version of Fuel, in particular, version 3 alpha, lacks everything in flexibility and couldn't even allow me to set the timeout which 
 caused problems.
 
 Simple kHttp aims to fill that little tiny gap in HTTP libraries. kHttp is an extremely flexible, small and simple Kotlin-based 
@@ -31,8 +31,20 @@ suspend fun main() {
 ## Plugins
 
 kHttp's plugin system is very straightforward and each plugin can have a before and after task with a little in-memory store
-that allows things such as recording elapsed time. We also have built-in plugins:
-- `ElapsedTimePlugin`
+that allows things such as recording elapsed time.
+
+To install a first-party plugin, simply add it as a dependency on your project, for example:
+```groovy
+dependencies {
+  implementation 'pw.mihou.simple-khttp:plugin-name'
+}
+```
+
+Third-party plugins may be installed similarly, but with a different group, or if you want to have your plugin included 
+under the same first-party group, then you can create a pull request.
+
+**Available First Party Plugins**
+- `ElapsedTimePlugin` (`pw.mihou.simple-khttp:elapsed-time-plugin`)
   - description: records the start and end time plus the elapsed time.
   - properties: 
     - `elapsed.time`: Duration

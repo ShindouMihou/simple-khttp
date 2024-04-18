@@ -1,0 +1,10 @@
+description = "A plugin for Simple kHTTP that adds time measurements to HTTP requests."
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(path: ":core")
+}
