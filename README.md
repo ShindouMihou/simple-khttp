@@ -8,7 +8,7 @@ Simple kHttp aims to fill that little tiny gap in HTTP libraries. kHttp is an ex
 coroutine wrapper around Java's new HttpClient with an additional plugin-based system. The library aims to be as simple as possible 
 while still being super flexible, such as discarding the response body, etc.
 
-> **Note!**
+> **Note**
 > 
 > Simple kHTTP uses coroutines underneath, therefore, if the project that you are building doesn't support Kotlin Coroutines, 
 > then this library isn't supported for your project.
@@ -67,7 +67,7 @@ dependencies {
 }
 ```
 
-```maven
+```xml
 <dependency>
   <groupId>pw.mihou.simple-khttp</groupId>
   <artifactId>core</artifactId>
@@ -119,6 +119,4 @@ suspend fun main() {
 
 ## License
 
-As part of Qucy Studios and Shindou Mihou's Open-Source Libraries, Simple kHTTP will be MIT-licensed permanently and 
-irrevocably, which means that this license shall not change. You and enterprises are free to use, redistribute and  
-modify the code for any purposes, although we hold no responsibility for any harm conducted by the use of the library.
+As part of Qucy Studios and Shindou Mihou's Open-Source Libraries, Simple kHTTP will be MIT-licensed permanently and irrevocably, which means that this license shall not change. You and enterprises are free to use, redistribute, and modify the code for any purposes, although we hold no responsibility for any harm conducted by the use of the library.
